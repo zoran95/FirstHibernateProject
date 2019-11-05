@@ -12,7 +12,7 @@ public class GlavnaHibernateKlasa {
 		
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		
-		Car car = new Car("bugatti","veyron", 2015, 1.8, true);
+		Car car = new Car("bugatti","chiron", 2018, 3.1, false);
 		
 		
 		
