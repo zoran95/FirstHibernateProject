@@ -17,12 +17,17 @@ public class GlavnaHibernateKlasa {
 		//Car car = new Car("maserati","ghilbi", 2016, 0.18, true);
 	//	dao.snimiAutoUBazu(car);
 		
-		Car car = dao.vratiAuto(2);
-		dao.updateCarPrice(car.getIdCar(), 180000);
-		System.out.println("Uzeo si auto " + car.getMarka() + " "+ car.getModel());
-		System.out.println("Nova cena je " + car.getCena());
+		//Car car = dao.vratiAuto(2);
+	//	dao.updateCarPrice(car.getIdCar(), 180000);
+		//System.out.println("Uzeo si auto " + car.getMarka() + " "+ car.getModel());
+	//	System.out.println("Nova cena je " + car.getCena());
 		
-		
+		if (dao.deleteCar(2)) {
+			System.out.println("Obrisan je auto");
+			
+		}else {
+			System.out.println("Nije obrisan auto");
+		}
 		
 	}
 
