@@ -4,37 +4,26 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import controller.HibernetDAO;
 import model.Car;
 
 public class GlavnaHibernateKlasa {
 
 	public static void main(String[] args) {
 		
-		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		
-		Car car = new Car("bugatti","chiron", 2018, 3.1, false);
+		HibernetDAO dao = new HibernetDAO();
 		
+		//Car car = new Car("maserati","ghilbi", 2016, 0.18, true);
+	//	dao.snimiAutoUBazu(car);
 		
-		
-		Session sesija = factory.openSession();
-		sesija.beginTransaction();
-		
-		try {
-			sesija.save(car);
-			System.out.println("Ubacio sam u bazu");
-			
-			sesija.getTransaction().commit();
-			
-		} catch (Exception e) {
-			
-			sesija.getTransaction().rollback();
-		}
+		Car car = dao.vratiAuto(2);
+		dao.updateCarPrice(car.getIdCar(), 180000);
+		System.out.println("Uzeo si auto " + car.getMarka() + " "+ car.getModel());
+		System.out.println("Nova cena je " + car.getCena());
 		
 		
 		
-		
-		sesija.close();
-
 	}
 
 }
