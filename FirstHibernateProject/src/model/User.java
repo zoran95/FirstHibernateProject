@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,6 +27,18 @@ public class User {
 	private String password;
 	private double novcanik;
 	
+	
+	@Embedded
+	private VisitCard visitCard;
+	
+	
+	
+	public VisitCard getVisitCard() {
+		return visitCard;
+	}
+	public void setVisitCard(VisitCard visitCard) {
+		this.visitCard = visitCard;
+	}
 	public int getIdUser() {
 		return idUser;
 	}
