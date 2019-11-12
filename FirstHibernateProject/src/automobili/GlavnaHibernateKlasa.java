@@ -1,11 +1,10 @@
 package automobili;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+
 
 import controller.HibernetDAO;
 import model.Car;
+import model.User;
 
 public class GlavnaHibernateKlasa {
 
@@ -14,21 +13,15 @@ public class GlavnaHibernateKlasa {
 		
 		HibernetDAO dao = new HibernetDAO();
 		
-		//Car car = new Car("maserati","ghilbi", 2016, 0.18, true);
-	//	dao.snimiAutoUBazu(car);
+		Car car = new Car("land rover", "discovery", 2018, 39990, false);
+	
+		User user = new User();
+		user.setUserName("ruza");
+		user.setPassword("ruzaprogramer123");
+		user.setNovcanik(100000);
 		
-		//Car car = dao.vratiAuto(2);
-	//	dao.updateCarPrice(car.getIdCar(), 180000);
-		//System.out.println("Uzeo si auto " + car.getMarka() + " "+ car.getModel());
-	//	System.out.println("Nova cena je " + car.getCena());
-		
-		if (dao.deleteCar(2)) {
-			System.out.println("Obrisan je auto");
-			
-		}else {
-			System.out.println("Nije obrisan auto");
-		}
-		
+		dao.snimiAutoUBazu(car);
+		dao.snimiUseraUBazu(user);
 	}
 
 }
