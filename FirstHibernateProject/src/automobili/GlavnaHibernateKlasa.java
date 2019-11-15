@@ -15,6 +15,8 @@ public class GlavnaHibernateKlasa {
 		
 		HibernetDAO dao = new HibernetDAO();
 		
+		dao.linkujUseraIAuto(1, 1);
+	/*	
 		Car car = new Car("land rover", "discovery", 2018, 39990, false, VrstaVozila.SUV);
 	VisitCard visitCard = new VisitCard();
 	visitCard.setIme("Ruzica");
@@ -26,9 +28,11 @@ public class GlavnaHibernateKlasa {
 		user.setPassword("ruzaprogramer123");
 		user.setNovcanik(100000);
 		user.setVisitCard(visitCard);
+		*/
 		
-		dao.snimiAutoUBazu(car);
-		dao.snimiUseraUBazu(user);
+		//dao.snimiUseraUBazu(user);
+		//dao.snimiAutoUBazu(car);
+		
 	}
 
 }

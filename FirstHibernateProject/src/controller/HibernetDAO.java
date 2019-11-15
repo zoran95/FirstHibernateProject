@@ -120,5 +120,32 @@ public boolean  deleteCar(int id) {
 	}
 }
 	
+public  void linkujUseraIAuto(int idCar, int idUser) {
+	Session sesija = factory.openSession();
+	sesija.beginTransaction();
 	
+	Car car;
+	User user;
+	
+	try {
+		car = sesija.get(Car.class, idCar);
+		user = sesija.get(User.class, idUser);
+		
+		car.setKorisnik(user);
+		user.setAuto(car);
+		
+		sesija.update(user);
+		sesija.update(car);
+		
+		
+		sesija.getTransaction().commit();
+		
+	} catch (Exception e) {
+		sesija.getTransaction().rollback();
+		 
+	}finally {
+		sesija.close();
+	}
+}
+
 }
