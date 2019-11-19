@@ -120,7 +120,8 @@ public boolean  deleteCar(int id) {
 	}
 }
 	
-public  void linkujUseraIAuto(int idCar, int idUser) {
+//ova metoda je za 1 na 1
+/*public  void linkujUseraIAuto(int idCar, int idUser) {
 	Session sesija = factory.openSession();
 	sesija.beginTransaction();
 	
@@ -146,6 +147,6 @@ public  void linkujUseraIAuto(int idCar, int idUser) {
 	}finally {
 		sesija.close();
 	}
-}
+}*/
 
 }
