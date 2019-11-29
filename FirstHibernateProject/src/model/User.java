@@ -24,15 +24,16 @@ import javax.persistence.Table;
 //table-podesavanje kada ne zelimo da se tabela zove isto kao i klasa
 @Entity
 @Table(name = "korisnik")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "Vrsta_usera", discriminatorType = DiscriminatorType.STRING)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//samo za single table strategy
+/*@DiscriminatorColumn(name = "Vrsta_usera", discriminatorType = DiscriminatorType.STRING)*/
 public class User {
 	
 	
 	//id-za kolonu id da dodaje sama
 	//gv-da bi kolona id bila autoincrement
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int idUser;
 	//column-isto kao i za table
 	@Column(name = "user_name")
