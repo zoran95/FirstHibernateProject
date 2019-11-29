@@ -7,6 +7,8 @@ import java.util.List;
 
 import controller.HibernetDAO;
 import model.Car;
+import model.Kupac;
+import model.Prodavac;
 import model.User;
 import model.VisitCard;
 import model.VrstaVozila;
@@ -19,13 +21,57 @@ public class GlavnaHibernateKlasa {
 		HibernetDAO dao = new HibernetDAO();
 		
 		
+		User user =new User();
+		
+		user.setUserName("Pera");
+		
+		
+		Prodavac prodavac = new Prodavac();
+		prodavac.setUserName("Elvis");
+		prodavac.setPib(1);
+
+		
+		Kupac kupac = new Kupac();
+		kupac.setUserName("Milica");
+		kupac.setJmbg("1234567890123");
+		
+		dao.snimiUseraUBazu(user);
+		dao.snimiUseraUBazu(prodavac);
+		dao.snimiUseraUBazu(kupac);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	/*	User user = dao.vratiUsera(1);
 		System.out.println("Zdravo "+ user.getUserName());*/
 		
 		
 		//dao.izlistajAutomobile(user);
 		
-		
+		/*
 		  Car auto1 = dao.vratiAuto(1); 
 		  Car auto2 = dao.vratiAuto(2);
 
@@ -37,7 +83,7 @@ public class GlavnaHibernateKlasa {
 
 		  if(dao.daLiUserImaDovoljnoParaZaAutomobile(user, ruziniAutici)) {
 			  dao.spojiUseraICar(user, ruziniAutici); 
-			  }
+			  }*/
 		/*Car auto1 = dao.vratiAuto(2);
 		Car auto2 = dao.vratiAuto(3);
 		Car auto3 = dao.vratiAuto(5);
